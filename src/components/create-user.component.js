@@ -38,16 +38,16 @@ export default class CreateUser extends Component {
 
         console.log(user);
 
-        //in an actual deployment or case, this should be replaced with a variable holding
-        //the actual address of the server that the serverside application is running on
-        axios.post('http://localhost:5000/users/')
+        //in an actual deployment or case, URI should be replaced with a variable holding
+        //the actual URI of the db that the serverside application is running on
+        axios.post('http://localhost:5000/users/add', user) /*POST request being sent to back end*/
+        .then(res => console.log(res.data));
 
         //resets the state of this component so user can input multiple users
         this.setState({
             username : ''
         })
 
-        //sends values from form to the MongoDB database
     }
 
     render(){

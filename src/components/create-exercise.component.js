@@ -1,7 +1,8 @@
 
-//import react, component, and datepicker
+//import react, component, axios, and datepicker
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
+import axios from 'axios';
 import "react-datepicker/dist/react-datepicker.css"
 
 export default class CreateExercises extends Component {
@@ -31,10 +32,15 @@ export default class CreateExercises extends Component {
 
     //react lifecycle method, automatically called when anything is displayed on the page
     componentDidMount(){
-        this.setState({
-            users : ['test user'],
-            username : 'test user'
-        });
+        axios.get('http://localhost:5000/users/')
+        .then(response => {
+            if (response.data.length > 0) {
+                this.setState({
+                    users : response.data.map(user => user.username),
+                    username : response.data[0].username
+                })
+            }
+        })
     }
 
     //changes username attribute of state from input
@@ -78,9 +84,10 @@ export default class CreateExercises extends Component {
 
         console.log(exercise);
 
-        window.location = '/';
+        axios.post('http://localhost:5000/exercises/add', user) /*POST request being sent to back end*/
+        .then(res => console.log(res.data));
 
-        //sends values from form to the MongoDB database
+        window.location = '/';
     }
 
     render(){
