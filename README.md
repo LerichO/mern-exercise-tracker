@@ -1,6 +1,6 @@
 # MERN Exercise Tracker - Full-Stack Practice Application
 
-Based on [tutorial from freeCodeCamp](https://www.youtube.com/watch?v=7CqJlxBYj-M&t=5796s&ab_channel=freeCodeCamp.org) teaching the fundamentals of creating a full-stack web application using the MERN (MongoDB-Express.js-React.js-Node.js) stack
+Based on [tutorial from freeCodeCamp](https://www.youtube.com/watch?v=7CqJlxBYj-M&t=5796s&ab_channel=freeCodeCamp.org) teaching the fundamentals of creating a full-stack web application using the MERN (MongoDB-Express.js-React.js-Node.js) stack. This application allows users to log exercises onto a MongoDB database which tracks both exercises and users that the exercises belong to.
 
 # React App README:
 
